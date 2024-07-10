@@ -46,16 +46,18 @@
           <section>
             <h4 class="duration fw-bold">{{ $t('resume.skills.professional_skillset.title') }}</h4>
             <div class="row my-3">
-              <div class="col-sm-4 my-2" v-for="(item, index) in skill_list" :key="index">
-                <p>{{ item }}</p>
+              <div class="col-sm-4 my-2 d-flex" v-for="(item, index) in skill_list" :key="index">
+                <i class="bi bi-check2-circle"></i>
+                <p class="ms-3">{{ item }}</p>
               </div>
             </div>
           </section>
           <section>
             <h4 class="duration fw-bold">{{ $t('resume.skills.language.title') }}</h4>
             <div class="row my-3">
-              <div class="col-sm-4 my-2" v-for="(item, index) in language_list" :key="index">
-                <p>{{ item }}</p>
+              <div class="col-sm-4 my-2 d-flex" v-for="(item, index) in language_list" :key="index">
+                <i class="bi bi-check2-circle"></i>
+                <p class="ms-3">{{ item }}</p>
               </div>
             </div>
           </section>

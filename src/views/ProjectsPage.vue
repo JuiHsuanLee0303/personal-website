@@ -8,56 +8,19 @@
       <section class="project-card my-5" v-for="(item, index) in project_list" :key="index">
         <div class="row m-0">
           <div class="left-card col-md-7 p-5">
-            <div class="mb-4">
-              <h4 class="duration fw-bold d-flex">
+            <div class="mb-3">
+              <h4 class="duration fw-bold d-flex mb-1">
                 <a :href="item.link" class="custom-link"><i class="bi bi-github"></i> </a>
-                <p class="ms-3">{{ item.title }}</p>
+                <p class="ms-3 mb-0">{{ item.title }}</p>
               </h4>
+              <div class="d-flex flex-wrap mt-0">
+                <div class="me-2" v-for="(i, index) in item.badge" :key="index">
+                  <span class="badge fw-bold">{{ i }}</span>
+                </div>
+              </div>
             </div>
-            <div class="mb-4">
-              <p class="lh-lg">{{ item.description }}</p>
-            </div>
-            <div class="progress" style="height: 10%">
-              <div
-                class="progress-bar bg-info"
-                role="progressbar"
-                style="width: 25%"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                Vue.js
-              </div>
-              <div
-                class="progress-bar bg-primary"
-                role="progressbar"
-                style="width: 25%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                SCSS
-              </div>
-              <div
-                class="progress-bar bg-success"
-                role="progressbar"
-                style="width: 25%"
-                aria-valuenow="75"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                JavaScript
-              </div>
-              <div
-                class="progress-bar bg-warning"
-                role="progressbar"
-                style="width: 25%"
-                aria-valuenow="100"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                Vite
-              </div>
+            <div class="mb-0">
+              <p class="lh-lg mb-0">{{ item.description }}</p>
             </div>
           </div>
           <div class="right-card col-md-5 px-0 d-flex justify-content-end">
@@ -123,6 +86,14 @@ export default {
         .left-card {
           background-color: white;
           box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+          .badge {
+            background-color: #bb9a88;
+            transition: all 0.5s ease;
+            cursor: default;
+            &:hover {
+              background-color: #a28170;
+            }
+          }
         }
       }
       img {

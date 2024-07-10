@@ -41,6 +41,7 @@ h6,
 button,
 label,
 select,
+span,
 li {
   font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
 }

@@ -77,6 +77,7 @@
     "project_list": [
       {
         "title": "Personal Website",
+        "badge": ["Vue.js", "Pinia", "Bootstrap", "Vue Router", "Git", "GitHub"],
         "link": "https://juihsuanlee0303.github.io/personal-website/",
         "description": "I built a personal website with Vue.js, using its component architecture to create a dynamic interface for showcasing my portfolio and resume. The site integrates Vue Router for seamless navigation, Pinia for efficient state management, and modern CSS frameworks like Bootstrap for responsive design. I also enhanced functionality with Vue plugins like vue-i18n for multilingual support."
       }
