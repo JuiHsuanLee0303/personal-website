@@ -1,0 +1,88 @@
+{
+  "navigation": {
+    "name": "Lee Jui Hsuan",
+    "position": "Software Developer",
+    "home": "Home",
+    "resume": "Resume",
+    "projects": "Projects",
+    "languageSetting": {
+      "title": "Language setting",
+      "language": "Language",
+      "english": "English",
+      "zh-tw": "Traditional Chinese",
+      "apply": "Apply"
+    }
+  },
+  "home": {
+    "name": "Lee Jui Hsuan",
+    "position": "Software Developer",
+    "hello": "Hello",
+    "greeting": "Here's who I am & what I do",
+    "introduction": "I am a software engineer passionate about full-stack development, dedicated to creating intuitive and efficient user interfaces. I possess a broad technical background, including front-end technologies (Vue.js) and back-end technologies (such as Node.js and Express). I am enthusiastic about optimizing user experiences and enhancing product value, constantly striving to tackle challenges with innovative solutions."
+  },
+  "resume": {
+    "title": "Resume",
+    "experience": {
+      "title": "Experience",
+      "experience_list": [
+        {
+          "company": "Kaoming 1 on 1",
+          "position": "Math Teacher",
+          "duration": "2019 - 2024",
+          "description": "During my tenure as a math teacher at a tutoring center, I was responsible for teaching middle and high school math courses. I excelled at transforming complex mathematical concepts into simple and understandable content, using interactive and engaging teaching methods to stimulate students' interest in learning. Throughout the teaching process, I focused on developing students' logical thinking and problem-solving skills, helping them achieve significant progress in the subject of mathematics."
+        },
+        {
+          "company": "TutorABC Corp.",
+          "position": "User Experience Protection Engineer",
+          "duration": "2019",
+          "description": "As a User Experience Protection Engineer, I was primarily responsible for conducting equipment and network diagnostics for the teacher's end, ensuring the stability and reliability of teaching devices and network connections. Additionally, I ensured the smooth operation of online courses by promptly identifying and resolving issues during online sessions, thereby providing the best user experience for both students and teachers."
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "education_list": [
+        {
+          "institution": "National Taipei University of Business",
+          "degree": "Master fo Artificial Intelligence and Business Applications",
+          "duration": "2024 - Present",
+          "description": "I am pursuing a Master's degree in Artificial Intelligence and Business Applications at National Taipei University of Business. In this program, I have delved deeply into the application of artificial intelligence technology in the business domain, learning how to leverage advanced techniques and data analytics to solve business challenges. Through coursework and hands-on projects, I have not only strengthened my understanding of AI theory but also cultivated the ability to apply these technologies in real-world scenarios. This learning experience has not only expanded my knowledge base but also laid a solid foundation for innovating and leading in technology-driven business environments in the future."
+        },
+        {
+          "institution": "National Taiwan University",
+          "degree": "Department of Computer Science & Information Engineering",
+          "duration": "2014 - 2018",
+          "description": "I studied at the Department of Information Engineering, National Taiwan University from 2014 to 2018. During my university years, I learned the fundamental principles of computer science, various programming languages, and software development methodologies. The rigorous coursework and hands-on projects cultivated strong analytical and problem-solving skills in me, laying a solid foundation for my future career as a software engineer."
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "professional_skillset": {
+        "title": "Professional Skillset",
+        "skill_list": ["HTML+CSS", "JavaScript", "Vue.js", "Python", "Node.js", "MongoDB"]
+      },
+      "language": {
+        "title": "Language",
+        "language_list": [
+          "Mandarin Chinese (native)",
+          "English (proficient)",
+          "Japanese (intermediate)"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "project_list": [
+      {
+        "title": "Personal Website",
+        "link": "https://juihsuanlee0303.github.io/personal-website/",
+        "description": "I built a personal website with Vue.js, using its component architecture to create a dynamic interface for showcasing my portfolio and resume. The site integrates Vue Router for seamless navigation, Pinia for efficient state management, and modern CSS frameworks like Bootstrap for responsive design. I also enhanced functionality with Vue plugins like vue-i18n for multilingual support."
+      }
+    ]
+  },
+  "footer": {
+    "title": "Follow"
+  }
+}
