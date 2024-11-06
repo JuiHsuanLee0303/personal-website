@@ -9,15 +9,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [vue()],
     base: env.VITE_BASE_URL || '/',
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
-                @import "@/assets/scss/custom.scss";
-              `
-        }
-      }
-    },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
