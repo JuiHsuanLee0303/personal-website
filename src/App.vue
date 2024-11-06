@@ -1,7 +1,7 @@
 <template>
   <MainNavigation />
 
-  <main class="mx-0 px-0 custom-main">
+  <main class="mx-0 px-0 flex-grow w-screen">
     <router-view></router-view>
   </main>
 
@@ -24,10 +24,7 @@ export default {
 <style>
 body,
 html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+  @apply m-0 p-0 w-full overflow-x-hidden;
 }
 
 a,
@@ -47,27 +44,10 @@ li {
 }
 
 #app {
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100vw !important;
-  padding: 0;
-  margin: 0;
-}
-
-.custom-main {
-  flex-grow: 1;
-  width: 100vw;
+  @apply text-[#2c3e50] flex flex-col min-h-screen w-screen p-0 m-0;
 }
 
 .custom-link {
-  color: var(--bs-heading-color) !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease;
-}
-
-.custom-link:hover {
-  color: #bb9a88 !important;
+  @apply text-current no-underline transition-colors duration-300 ease-in-out hover:text-[#bb9a88];
 }
 </style>

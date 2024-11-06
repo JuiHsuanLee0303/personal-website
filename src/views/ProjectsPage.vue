@@ -1,30 +1,59 @@
 <template>
-  <div class="projects-page d-flex justify-content-center align-items-center">
-    <div class="background"></div>
-    <div class="content container-lg pt-5">
-      <div class="d-flex justify-content-center my-4">
-        <h1 class="fw-bold">{{ $t('projects.title') }}</h1>
+  <div class="relative min-h-[90vh] flex justify-center items-center">
+    <div
+      class="absolute w-full h-full bg-gradient-to-br from-[#b5a8a0] to-[#a28170] animate-gradientFlow"
+    ></div>
+    <div class="relative container mx-12 lg:mx-0 max-w-[900px] z-10 mt-5 animate-fadeIn">
+      <div class="flex justify-center my-4">
+        <h1
+          class="font-bold text-3xl text-white hover:text-[#4a3f39] transition-colors duration-300 cursor-pointer transform hover:scale-105"
+        >
+          {{ $t('projects.title') }}
+        </h1>
       </div>
-      <section class="project-card my-5" v-for="(item, index) in project_list" :key="index">
-        <div class="row m-0">
-          <div class="left-card col-md-7 p-5">
-            <div class="mb-3">
-              <h4 class="duration fw-bold d-flex mb-1">
-                <a :href="item.link" class="custom-link"><i class="bi bi-github"></i> </a>
-                <p class="ms-3 mb-0">{{ item.title }}</p>
-              </h4>
-              <div class="d-flex flex-wrap mt-0">
-                <div class="me-2" v-for="(i, index) in item.badge" :key="index">
-                  <span class="badge fw-bold">{{ i }}</span>
-                </div>
+      <section
+        v-for="(item, index) in project_list"
+        :key="index"
+        class="bg-white/95 backdrop-blur-sm shadow-lg rounded-lg my-8 hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02] animate-slideIn group"
+        :style="{ animationDelay: `${index * 200}ms` }"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 overflow-hidden rounded-lg">
+          <div class="lg:col-span-7 p-6 lg:p-8">
+            <div class="mb-4">
+              <div class="flex items-center gap-3 mb-3">
+                <a
+                  :href="item.link"
+                  target="_blank"
+                  class="text-[#4a3f39] hover:text-[#8b6c5d] transition-colors duration-300 flex items-center gap-2"
+                >
+                  <i class="bi bi-github text-2xl"></i>
+                  <h3
+                    class="text-xl font-bold text-[#4a3f39] hover:text-[#8b6c5d] transition-colors duration-300"
+                  >
+                    {{ item.title }}
+                  </h3>
+                </a>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="(badge, badgeIndex) in item.badge"
+                  :key="badgeIndex"
+                  class="px-3 py-1 text-sm font-semibold text-white bg-[#bb9a88] rounded-full hover:bg-[#a28170] transition-colors duration-300 cursor-default"
+                >
+                  {{ badge }}
+                </span>
               </div>
             </div>
-            <div class="mb-0">
-              <p class="lh-lg mb-0">{{ item.description }}</p>
-            </div>
+            <p class="text-gray-600 leading-relaxed">
+              {{ item.description }}
+            </p>
           </div>
-          <div class="right-card col-md-5 px-0 d-flex justify-content-end">
-            <img src="/project_1_1.PNG?url" alt="" />
+          <div class="lg:col-span-5 h-[300px] lg:h-auto">
+            <img
+              src="/project_1_1.PNG?url"
+              alt="Project Preview"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
           </div>
         </div>
       </section>
@@ -32,77 +61,77 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import en from '../locales/en.json'
 import zh from '../locales/zh.json'
 import { useLanguageStore } from '../stores/languageStore'
 import { onMounted, watch, ref } from 'vue'
 
-export default {
-  setup() {
-    const languageStore = useLanguageStore()
-    const currentLanguage = languageStore.getLanguage()
-    const project_list = ref([])
-    onMounted(() => {
-      if (currentLanguage === 'en') {
-        project_list.value = en.projects.project_list
-      } else if (currentLanguage == 'zh') {
-        project_list.value = zh.projects.project_list
-      }
-    })
+const languageStore = useLanguageStore()
+const currentLanguage = languageStore.getLanguage()
+const project_list = ref([])
 
-    watch(languageStore.getLanguage, (newLanguage) => {
-      if (newLanguage === 'en') {
-        project_list.value = en.projects.project_list
-      } else if (newLanguage == 'zh') {
-        project_list.value = zh.projects.project_list
-      }
-    })
-
-    return {
-      project_list
-    }
+onMounted(() => {
+  if (currentLanguage === 'en') {
+    project_list.value = en.projects.project_list
+  } else if (currentLanguage == 'zh') {
+    project_list.value = zh.projects.project_list
   }
-}
+  console.log('Project List:', project_list.value)
+})
+
+watch(languageStore.getLanguage, (newLanguage) => {
+  if (newLanguage === 'en') {
+    project_list.value = en.projects.project_list
+  } else if (newLanguage == 'zh') {
+    project_list.value = zh.projects.project_list
+  }
+})
 </script>
 
-<style lang="scss" scoped>
-.projects-page {
-  position: relative;
-  min-height: 90vh;
-  .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #b5a8a0;
+<style scoped>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  .content {
-    position: relative;
-    max-width: 900px;
-    z-index: 1;
-    .project-card {
-      .row {
-        width: 100%;
-        .left-card {
-          background-color: white;
-          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-          .badge {
-            background-color: #bb9a88;
-            transition: all 0.5s ease;
-            cursor: default;
-            &:hover {
-              background-color: #a28170;
-            }
-          }
-        }
-      }
-      img {
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-      }
-    }
+  to {
+    opacity: 1;
   }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 1s ease-out forwards;
+}
+
+.animate-gradientFlow {
+  animation: gradientFlow 15s ease infinite;
+  background-size: 200% 200%;
 }
 </style>

@@ -10,7 +10,8 @@
       "language": "Language",
       "english": "English",
       "zh-tw": "Traditional Chinese",
-      "apply": "Apply"
+      "apply": "Apply",
+      "close": "Close"
     }
   },
   "home": {
@@ -60,7 +61,11 @@
       "title": "Skills",
       "professional_skillset": {
         "title": "Professional Skillset",
-        "skill_list": ["HTML+CSS", "JavaScript", "Vue.js", "Python", "Node.js", "MongoDB"]
+        "skill_list": {
+          "frontend": ["HTML+CSS", "JavaScript", "Vue.js"],
+          "backend": ["Python", "Node.js", "MongoDB"],
+          "data": ["Data Analysis", "Machine Learning", "Deep Learning"]
+        }
       },
       "language": {
         "title": "Language",
@@ -77,9 +82,10 @@
     "project_list": [
       {
         "title": "Personal Website",
-        "badge": ["Vue.js", "Pinia", "Bootstrap", "Vue Router", "Git", "GitHub"],
+        "badge": ["Vue.js", "Pinia", "Tailwind CSS", "Vue Router", "Git", "GitHub"],
         "link": "https://juihsuanlee0303.github.io/personal-website/",
-        "description": "I built a personal website with Vue.js, using its component architecture to create a dynamic interface for showcasing my portfolio and resume. The site integrates Vue Router for seamless navigation, Pinia for efficient state management, and modern CSS frameworks like Bootstrap for responsive design. I also enhanced functionality with Vue plugins like vue-i18n for multilingual support."
+        "description": "I built a personal website with Vue.js, using its component architecture to create a dynamic interface for showcasing my portfolio and resume. The site integrates Vue Router for seamless navigation, Pinia for efficient state management, and modern CSS frameworks like Tailwind CSS for responsive design. I also enhanced functionality with Vue plugins like vue-i18n for multilingual support.",
+        "preview": "/project_1_1.PNG"
       }
     ]
   },

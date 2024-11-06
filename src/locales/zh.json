@@ -10,7 +10,8 @@
       "language": "語言",
       "english": "英文",
       "zh-tw": "繁體中文",
-      "apply": "套用"
+      "apply": "套用",
+      "close": "關閉"
     }
   },
   "home": {
@@ -60,7 +61,11 @@
       "title": "技能",
       "professional_skillset": {
         "title": "專業技能",
-        "skill_list": ["HTML+CSS", "JavaScript", "Vue.js", "Python", "Node.js", "MongoDB"]
+        "skill_list": {
+          "frontend": ["HTML+CSS", "JavaScript", "Vue.js"],
+          "backend": ["Python", "Node.js", "MongoDB"],
+          "data": ["資料分析", "機器學習", "深度學習"]
+        }
       },
       "language": {
         "title": "語言",
@@ -73,9 +78,10 @@
     "project_list": [
       {
         "title": "個人網站",
-        "badge": ["Vue.js", "Pinia", "Bootstrap", "Vue Router", "Git", "GitHub"],
+        "badge": ["Vue.js", "Pinia", "Tailwind CSS", "Vue Router", "Git", "GitHub"],
         "link": "https://juihsuanlee0303.github.io/personal-website/",
-        "description": "使用 Vue.js 開發個人網站，利用其組件架構創建了一個動態使用者界面，用來展示我的作品集和履歷。該網站集成了 Vue Router 實現各個部分之間的無縫導航，並使用 Pinia 進行狀態管理，確保數據流動高效，使用者體驗流暢。此外，我還採用了現代化的 CSS 框架如 Bootstrap 進行樣式設計和響應式佈局，並整合了多個 Vue 插件提升功能，例如 vue-i18n 實現多語言支持。"
+        "description": "使用 Vue.js 開發個人網站，利用其組件架構創建了一個動態使用者界面，用來展示我的作品集和履歷。該網站集成了 Vue Router 實現各個部分之間的無縫導航，並使用 Pinia 進行狀態管理，確保數據流動高效，使用者體驗流暢。此外，我還採用了現代化的 CSS 框架如 Tailwind CSS 進行樣式設計和響應式佈局，並整合了多個 Vue 插件提升功能，例如 vue-i18n 實現多語言支持。",
+        "preview": "/project_1_1.PNG"
       }
     ]
   },
